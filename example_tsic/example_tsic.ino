@@ -34,16 +34,23 @@ void setGND(int i) {
 }
 
 int cycle = 0;
+char dataString[50] = {0};
 void loop() {
-    Serial.print("Starting cycle");
+    /*Serial.print("Starting cycle ");
     Serial.print(cycle++);
     Serial.println(" ...");
+    */
+    sprintf(dataString,"%02X",getValue(Sensor1));
+    Serial.println(dataString);
+    delay(1000);
+    /*
     displaySensor(Sensor1, 1);
     displaySensor(Sensor2, 2);
     displaySensor(Sensor3, 3);
     displaySensor(Sensor4, 4);
     displaySensor(Sensor5, 5);
-    delay(2000);    // wait 1 seconds
+    Serial.println(" ");
+    delay(60000);    // wait 1 seconds*/
 }
 
 void displaySensor(TSIC sensor, int i) {
@@ -51,11 +58,18 @@ void displaySensor(TSIC sensor, int i) {
         //Serial.print("uint_16: ");
         //Serial.println(temperature);
         Temperatur_C = sensor.calc_Celsius(&temperature);
-        Serial.print("Temperature for ");
+        //Serial.print("Temperature for ");
         Serial.print(i);
-        Serial.print(" is: ");
+        Serial.print(":");
         Serial.print(Temperatur_C);
-        Serial.println(" °C");
+        Serial.print(" ");
+        //Serial.println(" °C");
+    }
+}
+
+int getValue(TSIC sensor) {
+    if (sensor.getTemperature(&temperature)) {
+        return (int) sensor.calc_Celsius(&temperature)*1000;
     }
 }
 

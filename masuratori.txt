@@ -1,0 +1,41 @@
+ Timpul de masurare pentru un senzor daca il pornesc si il opresc.
+t = 46600 us; frecventa de citire = 21.5 Hz
+ Timpul de masurare daca nu pornesc si opresc senzorul:
+t = 100284 us; frecventa de citire = 10 Hz
+---
+ Timpul maxim pentru a masura un senzor este de:
+t = 2780 us;
+ Timpul minim este de:
+t = 2744 us;
+---
+	Timpul maxim pentru a masura fara a face calcule:
+t = 2668 us;
+	Timpul minim:
+t = 2628 us;
+---
+Nota urmatoarele masuratori pot varia .1 - .2 grade Celsius
+-
+Ora 20:25
+Sonda: 22.1 C
+Senzori: 24.47, 24.40, 24.26, 24.33, 23.68
+-
+Ora: 20:41
+Sonda: 21.5
+Senzori: 24.23, 23.99, 23.79, 23.75, 23.99
+-
+Ora: 20:46
+15.1
+20.57, 20.33, 20.13, 20.30, 21.08
+-
+Ora: 20:59
+19.0
+23.41, 23.17, 22.97, 22.90, 22.21
+-
+Ora: 21:12
+-2.6
+0.36, 0.22, -0.12, -0.15, -0.80
+-
+Ora: 21:35
+-3.5
+-2.48, -2.41, -2.68, -2.65, -2.78
+---
